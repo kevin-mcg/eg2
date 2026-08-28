@@ -1,21 +1,3 @@
 <h1>Create a new Escape Game</h1>
 
-<%= form_with(model: @escape_game) do |eg| %>
-  <%= eg.label :title %>
-  <br>
-  <%= eg.text_field :title %>
-  <br>
-  
-  <%= eg.label :description %>
-  <br>
-  <%= eg.text_area :description, rows: 7 %>
-  <br>
-
-  <%= eg.label :difficulty %>
-  <br>
-  <%= eg.text_field :difficulty %>
-  <br>
-  <br>
-
-  <%= eg.submit %>
-<% end %>
+<%= render "form", escape_game: @escape_game %>
