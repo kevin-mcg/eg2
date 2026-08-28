@@ -1,0 +1,2 @@
+class EscapeGamesController < ApplicationController
+end

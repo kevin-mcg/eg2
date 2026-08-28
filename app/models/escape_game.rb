@@ -1,0 +1,2 @@
+class EscapeGame < ApplicationRecord
+end
