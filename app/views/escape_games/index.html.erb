@@ -1,0 +1,5 @@
+<% @escape_games.each do |eg| %>
+  <p><%= link_to eg.title, eg %></p>
+  <p><%= eg.description %></p>
+  <p>--------------------</p>
+<% end %>
