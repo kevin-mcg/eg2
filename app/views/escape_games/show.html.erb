@@ -17,4 +17,6 @@
 
 <section>
   <%= link_to "Edit", edit_escape_game_path(@escape_game), class: "button"%>
+  <%= link_to "Delete", escape_game_path(@escape_game), class: "button",
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </section>

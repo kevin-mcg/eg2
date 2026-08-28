@@ -27,6 +27,12 @@ class EscapeGamesController < ApplicationController
     redirect_to escape_game_path(@escape_game)
   end
 
+  def destroy
+    @escape_game = EscapeGame.find(params[:id])
+    @escape_game.destroy
+    redirect_to @escape_game, status: :see_other
+  end
+
   private
 
   def escape_game_params
