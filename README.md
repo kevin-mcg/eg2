@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails app to create Escape Game questionnaires.
+These can then be used as a tool to complete escape games in a given location.
 
-Things you may want to cover:
+Admin users have elevated permissions like editing/deleting escape games & users.
 
-* Ruby version
 
-* System dependencies
+* Ruby version: 3.1.2
+* Rails version: 7.2.3.1
 
-* Configuration
+Run `bundle install` to install the needed gems
 
 * Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rails db:seed`
