@@ -5,6 +5,7 @@ class EscapeGamesController < ApplicationController
 
   def show
     @escape_game = EscapeGame.find(params[:id])
+    @questions = @escape_game.questions
   end
 
   def edit

@@ -1,0 +1,13 @@
+<%= form_with(model: question) do |q| %>
+  <%= q.label :question %>
+  <br>
+  <%= q.text_area :question %>
+  <br>
+  
+  <%= q.label :answer %>
+  <br>
+  <%= q.text_field :answer %>
+  <br>
+
+  <%= eg.submit %>
+<% end %>
