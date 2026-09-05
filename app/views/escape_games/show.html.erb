@@ -17,9 +17,9 @@
 
 <section>
   <div>
-    <%= form_with(model: @question) do |form| %>
+    <%= form_with url: check_answers_escape_game_path(@escape_game), method: :post do |form| %>
       <h1>Questions</h1>
-      <% @questions.each_with_index do |q, i| %>
+      <% @questions.each do |q| %>
         <table>
           <tr>
             <th>Question:</th>
@@ -27,9 +27,7 @@
           </tr>
           <tr>
             <th>Answer:</th>
-            <td>
-              <%= form.text_field "user_answer_" + "#{i+1}" %>
-            </td>
+            <td> <%= text_field_tag "answers[#{q.id}]" %> </td>
           </tr>
         </table>
       <% end %>

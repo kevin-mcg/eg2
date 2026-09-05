@@ -3,4 +3,8 @@ class Question < ApplicationRecord
 
   validates :question, presence: true, length: { minimum: 10 }
   validates :answer, presence: true, length: { minimum: 1, allow_blank: true }
+
+  def correct?(given_answer)
+    answer.to_s.strip.downcase == given_answer.to_s.strip.downcase
+  end
 end
