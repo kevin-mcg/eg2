@@ -36,12 +36,13 @@
   </div>
 
   <%= link_to "Add question", new_escape_game_question_path(@escape_game), class: "button"%>
+  <%= link_to "Edit questions", edit_escape_game_question_path(@escape_game), class: "button"%>
 </section>
 
 <br>
 
 <section>
-  <%= link_to "Edit", edit_escape_game_path(@escape_game), class: "button"%>
+  <%= link_to "Edit Escape Game", edit_escape_game_path(@escape_game), class: "button"%>
   <%= link_to "Delete", escape_game_path(@escape_game), class: "button",
               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </section>
