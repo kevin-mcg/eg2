@@ -89,7 +89,7 @@ class EscapeGamesController < ApplicationController
     else
       puts "KMcG - incorrect answer here"
       redirect_to @escape_game,
-        notice: 'At least one of your answers is incorrect. Try again.'
+        alert: 'At least one of your answers is incorrect. Try again.'
     end
 
     # respond_to do |format|
