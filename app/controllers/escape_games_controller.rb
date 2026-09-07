@@ -47,7 +47,6 @@ class EscapeGamesController < ApplicationController
       results_list << v
     end
 
-    results_list.include? false
     if results_list.include? false
       redirect_to @escape_game,
         alert: 'At least one of your answers is incorrect. Try again.'
