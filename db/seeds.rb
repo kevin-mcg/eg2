@@ -7,7 +7,7 @@
 #   ...
 #   Character.create(name: 'Luke', movie: movies.first)
 
-EscapeGame.create!([
+escape_games = EscapeGame.create!([
   {
     title: 'Bissy',
     description:
@@ -34,15 +34,15 @@ EscapeGame.create!([
   }
 ])
 
-Question.create! ([
+Question.create!([
   {
-    question: "What?",
-    answer: "Yes",
-    escape_game_id: 1
+    question: "Which door leads out of the cellar?",
+    answer: "The blue one",
+    escape_game: escape_games.first
   },
   {
-    question: "Where?",
-    answer: "No",
-    escape_game_id: 2
+    question: "What is the code for the padlock?",
+    answer: "1234",
+    escape_game: escape_games.second
   }
 ])

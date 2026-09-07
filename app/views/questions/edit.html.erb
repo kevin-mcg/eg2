@@ -1,17 +1,15 @@
-<h1>Editing: <%= link_to @escape_game.title, @escape_game %> questions</h1>
+<h1>Editing a question for: <%= link_to @escape_game.title, @escape_game %></h1>
 
-<%= form_with(model: @question, method: :patch) do |form| %>
-  <% @questions.each do |q| %>
-    <%= form.label :question %>
-    <br>
-    <%= form.text_area :question, value: q.question %>
-    <br>
-    
-    <%= form.label :answer %>
-    <br>
-    <%= form.text_field :answer, value: q.answer %>
-    <br>    
-  <% end %>
+<%= form_with(model: [ @escape_game, @question ]) do |form| %>
+  <%= form.label :question %>
+  <br>
+  <%= form.text_area :question %>
+  <br>
 
-  <%= form.submit "Update questions" %>
+  <%= form.label :answer %>
+  <br>
+  <%= form.text_field :answer %>
+  <br>
+
+  <%= form.submit "Update question" %>
 <% end %>

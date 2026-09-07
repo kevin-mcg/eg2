@@ -17,8 +17,8 @@
 
 <section>
   <div>
-    <%= form_with(model: @question) do |form| %>
-      <h1>Questions</h1>
+    <h1>Questions</h1>
+    <%= form_with(url: escape_game_path(@escape_game), method: :get, scope: :answers) do |form| %>
       <% @questions.each_with_index do |q, i| %>
         <table>
           <tr>
@@ -28,7 +28,13 @@
           <tr>
             <th>Answer:</th>
             <td>
-              <%= form.text_field "user_answer_" + "#{i+1}" %>
+              <%= form.text_field "user_answer_#{i + 1}" %>
+            </td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <%= link_to "Edit", edit_escape_game_question_path(@escape_game, q) %>
             </td>
           </tr>
         </table>
@@ -37,14 +43,13 @@
     <% end %>
   </div>
 
-  <%= link_to "Add question", new_escape_game_question_path(@escape_game), class: "button"%>
-  <%= link_to "Edit questions", edit_escape_game_question_path(@escape_game), class: "button"%>
+  <%= link_to "Add question", new_escape_game_question_path(@escape_game), class: "button" %>
 </section>
 
 <br>
 
 <section>
-  <%= link_to "Edit Escape Game", edit_escape_game_path(@escape_game), class: "button"%>
+  <%= link_to "Edit Escape Game", edit_escape_game_path(@escape_game), class: "button" %>
   <%= link_to "Delete", escape_game_path(@escape_game), class: "button",
               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </section>
