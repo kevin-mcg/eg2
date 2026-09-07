@@ -7,7 +7,7 @@ Admin users have elevated permissions like editing/deleting escape games & users
 
 
 * Ruby version: 3.4.10
-* Rails version: 7.2.3.1
+* Rails version: 8.0.5.1
 
 Run `bundle install` to install the needed gems
 
