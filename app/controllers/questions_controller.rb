@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     @escape_game = EscapeGame.find(params[:escape_game_id])
     @question = @escape_game.questions.new(question_params)
     if @question.save
-      redirect_to escape_game_path(@escape_game)
+      redirect_to escape_game_path(@escape_game), notice: "Question was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
     @escape_game = EscapeGame.find(params[:escape_game_id])
     @question = @escape_game.questions.find(params[:id])
     if @question.update(question_params)
-      redirect_to escape_game_path(@escape_game)
+      redirect_to escape_game_path(@escape_game), notice: "Question was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end

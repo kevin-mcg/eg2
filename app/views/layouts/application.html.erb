@@ -21,6 +21,10 @@
     <%= render "layouts/header" %>
 
     <div class="content">
+      <% flash.each do |type, message| %>
+        <div class="flash flash-<%= type %>" role="alert"><%= message %></div>
+      <% end %>
+
       <%= yield %>
     </div>
 

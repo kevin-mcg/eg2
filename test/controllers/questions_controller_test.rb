@@ -43,4 +43,31 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "First answer", @question.reload.answer
     assert_equal "Second answer", @other_question.reload.answer
   end
+
+  test "does not create an invalid question and shows the errors" do
+    assert_no_difference("Question.count") do
+      post escape_game_questions_url(@escape_game), params: {
+        question: { question: "too short", answer: "" }
+      }
+    end
+    assert_response :unprocessable_entity
+    assert_match "Answer can&#39;t be blank", response.body
+    assert_match "Question is too short", response.body
+  end
+
+  test "does not apply an invalid update and shows the errors" do
+    patch escape_game_question_url(@escape_game, @question), params: {
+      question: { question: "too short", answer: "" }
+    }
+    assert_response :unprocessable_entity
+    assert_equal "The blue one", @question.reload.answer
+  end
+
+  test "shows a flash notice after a successful create" do
+    post escape_game_questions_url(@escape_game), params: {
+      question: { question: "Who left the note?", answer: "The janitor" }
+    }
+    follow_redirect!
+    assert_match "Question was successfully created.", response.body
+  end
 end

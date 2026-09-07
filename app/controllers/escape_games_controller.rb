@@ -14,8 +14,11 @@ class EscapeGamesController < ApplicationController
 
   def update
     @escape_game = EscapeGame.find(params[:id])
-    @escape_game.update(escape_game_params)
-    redirect_to @escape_game
+    if @escape_game.update(escape_game_params)
+      redirect_to @escape_game, notice: "Escape game was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def new
@@ -24,14 +27,17 @@ class EscapeGamesController < ApplicationController
 
   def create
     @escape_game = EscapeGame.new(escape_game_params)
-    @escape_game.save
-    redirect_to escape_game_path(@escape_game)
+    if @escape_game.save
+      redirect_to escape_game_path(@escape_game), notice: "Escape game was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @escape_game = EscapeGame.find(params[:id])
     @escape_game.destroy
-    redirect_to @escape_game, status: :see_other
+    redirect_to escape_games_path, status: :see_other, notice: "Escape game was successfully deleted."
   end
 
   private
