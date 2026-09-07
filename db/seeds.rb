@@ -11,25 +11,25 @@ EscapeGame.create!([
   {
     title: 'Bissy',
     description:
-    %{
+    %(
       A very interesting escape game in Mas Barral.
-    }.squish,
+    ).squish,
     difficulty: 2
   },
   {
     title: 'Cognin',
     description:
-    %{
+    %(
       A quite interesting escape game in la Ferme de Forezan.
-    }.squish,
+    ).squish,
     difficulty: 3
   },
   {
     title: 'La Motte Servolex',
     description:
-    %{
+    %(
       A very good escape game in La Motte Servolex.
-    }.squish,
+    ).squish,
     difficulty: 4
   }
 ])
