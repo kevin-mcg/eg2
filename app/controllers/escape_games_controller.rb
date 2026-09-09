@@ -5,6 +5,7 @@ class EscapeGamesController < ApplicationController
 
   def show
     @escape_game = EscapeGame.find(params[:id])
+    @questions = @escape_game.questions
   end
 
   def edit
@@ -31,6 +32,28 @@ class EscapeGamesController < ApplicationController
     @escape_game = EscapeGame.find(params[:id])
     @escape_game.destroy
     redirect_to @escape_game, status: :see_other
+  end
+
+  def check_answers
+    @escape_game = EscapeGame.find(params[:id])
+    submitted = params[:answers] || {}
+
+    @results = @escape_game.questions.index_with do |q|
+      q.correct?(submitted[q.id.to_s])
+    end
+    
+    results_list = []
+    @results.each do |k,v|
+      results_list << v
+    end
+
+    if results_list.include? false
+      redirect_to @escape_game,
+        alert: 'At least one of your answers is incorrect. Try again.'
+    else
+      redirect_to @escape_game,
+        notice: 'Yay, your answer(s) are correct!'
+    end
   end
 
   private

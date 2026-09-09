@@ -33,3 +33,16 @@ EscapeGame.create!([
     difficulty: 4
   }
 ])
+
+Question.create! ([
+  {
+    question: "What?",
+    answer: "Yes",
+    escape_game_id: 1
+  },
+  {
+    question: "Where?",
+    answer: "No",
+    escape_game_id: 2
+  }
+])
