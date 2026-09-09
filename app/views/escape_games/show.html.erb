@@ -13,12 +13,10 @@
   </div>
 </section>
 
-<br>
-
 <section>
   <div>
     <%= form_with url: check_answers_escape_game_path(@escape_game), method: :post do |form| %>
-      <h1>Questions</h1>
+      <h2>Questions</h2>
       <% @questions.each do |q| %>
         <table>
           <tr>
@@ -40,7 +38,7 @@
 
 <br>
 
-<section>
+<section class="admin">
   <%= link_to "Edit", edit_escape_game_path(@escape_game), class: "button"%>
   <%= link_to "Delete", escape_game_path(@escape_game), class: "button",
               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>

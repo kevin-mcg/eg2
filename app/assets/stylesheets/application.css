@@ -22,7 +22,55 @@
   color: red;
  }
 
- .right {
+ .header {
+  background-color: lightcoral;
+  width:100%;
+  height:100px;
+  margin:5px;
+  overflow:hidden;
   float: right;
- }
- 
+}
+
+.title {
+  position:relative;
+  left:150px;
+}
+
+ul.menu {
+  padding:100;
+  margin:0;
+  float:right;
+}
+
+li.menu {
+  display:inline-block;
+  padding:20px;
+  border-radius: 5px;
+  position:relative;
+  top:-80px;
+  right:30px;
+  background:lightblue;
+}
+
+/* If 2 diff colours are needed... */
+li.in {background:lightblue;}
+li.up {background:lightblue;}
+
+.content {
+  background:lightsteelblue;
+  padding:20px;
+}
+
+.admin {
+  background:lightsteelblue;
+  text-align:center;
+}
+
+.footer {
+  background-color: lightseagreen;
+  width:100%;
+  height:100px;
+  margin:5px;
+  overflow:hidden;
+  text-align:center;
+}

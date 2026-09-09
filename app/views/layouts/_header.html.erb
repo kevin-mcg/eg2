@@ -1,8 +1,12 @@
-<header>
-  <h1><%= link_to "Escape Games", escape_games_path %></h1>
+<header class="header">
+  <h1 class="title"><%= link_to "Escape Games", escape_games_path %></h1>
 
-  <ul class="right">
-    <li>
+  <ul class="menu">
+    <li class="menu in">
+      <!-- Not implemented yet... -->
+      <%= link_to("Sign in", class: "button") %>
+    </li>
+    <li class="menu up">
       <%= link_to("Sign Up", signup_path, class: "button") %>
     </li>
   </ul>

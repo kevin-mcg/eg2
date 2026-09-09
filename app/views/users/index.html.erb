@@ -1,7 +1,9 @@
-<h1>All <%= pluralize(@users.size, "User") %></h1>
+<section>
+  <h1>All <%= pluralize(@users.size, "User") %></h1>
 
-<% @users.each do |u| %>
   <ul>
-    <li><%= link_to u.name, u %><br></li>
+    <% @users.each do |u| %>
+        <li><%= link_to u.name, u %><br></li>
+    <% end %>
   </ul>
-<% end %>
+</section>
