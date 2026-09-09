@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  # resources :escape_games do
-  #   resources :questions
-  # end
+  root "escape_games#index"
 
-  # Rodolphe
   resources :escape_games do
     post :check_answers, on: :member
     resources :questions
