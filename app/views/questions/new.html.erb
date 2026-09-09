@@ -1,7 +1,5 @@
 <h1>Create a new question for the escape game: <%= @escape_game.title %></h1>
 
-<%# render "form", question: @question %>
-
 <%= form_with(model: [@escape_game, @question]) do |q| %>
   <%= q.label :question %>
   <br>
