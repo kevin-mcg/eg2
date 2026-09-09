@@ -30,13 +30,14 @@
             <td> <%= text_field_tag "answers[#{q.id}]" %> </td>
           </tr>
         </table>
+        <%= link_to "Edit question", edit_escape_game_question_path(@escape_game), class: "button"%>
       <% end %>
       <%= form.submit "Check your answers" %>
     <% end %>
   </div>
 
   <%= link_to "Add question", new_escape_game_question_path(@escape_game), class: "button"%>
-  <%= link_to "Edit questions", edit_escape_game_question_path(@escape_game), class: "button"%>
+  <%# link_to "Edit questions", edit_escape_game_question_path(@escape_game), class: "button"%>
 </section>
 
 <br>
