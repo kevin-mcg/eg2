@@ -1,6 +1,8 @@
 <h1>Create a new question for the escape game: <%= @escape_game.title %></h1>
 
 <%= form_with(model: [@escape_game, @question]) do |q| %>
+  <%= render "shared/error_messages", record: @question %>
+
   <%= q.label :question %>
   <br>
   <%= q.text_area :question %>

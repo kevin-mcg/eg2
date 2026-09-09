@@ -7,42 +7,42 @@
 #   ...
 #   Character.create(name: 'Luke', movie: movies.first)
 
-EscapeGame.create!([
+escape_games = EscapeGame.create!([
   {
     title: 'Bissy',
     description:
-    %{
+    %(
       A very interesting escape game in Mas Barral.
-    }.squish,
+    ).squish,
     difficulty: 2
   },
   {
     title: 'Cognin',
     description:
-    %{
+    %(
       A quite interesting escape game in la Ferme de Forezan.
-    }.squish,
+    ).squish,
     difficulty: 3
   },
   {
     title: 'La Motte Servolex',
     description:
-    %{
+    %(
       A very good escape game in La Motte Servolex.
-    }.squish,
+    ).squish,
     difficulty: 4
   }
 ])
 
-Question.create! ([
+Question.create!([
   {
-    question: "What?",
-    answer: "Yes",
-    escape_game_id: 1
+    question: "Which door leads out of the cellar?",
+    answer: "The blue one",
+    escape_game: escape_games.first
   },
   {
-    question: "Where?",
-    answer: "No",
-    escape_game_id: 2
+    question: "What is the code for the padlock?",
+    answer: "1234",
+    escape_game: escape_games.second
   }
 ])

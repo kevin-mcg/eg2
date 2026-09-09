@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  question: MyText
-  answer: MyString
+  question: Which door is the safe one?
+  answer: The blue one
   escape_game: one
 
 two:
-  question: MyText
-  answer: MyString
+  question: What is the code for the padlock?
+  answer: 1234
   escape_game: two
+
+three:
+  question: Where is the second key hidden?
+  answer: Under the rug
+  escape_game: one

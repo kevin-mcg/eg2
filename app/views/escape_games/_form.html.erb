@@ -1,4 +1,6 @@
 <%= form_with(model: escape_game) do |eg| %>
+  <%= render "shared/error_messages", record: escape_game %>
+
   <%= eg.label :title %>
   <br>
   <%= eg.text_field :title %>

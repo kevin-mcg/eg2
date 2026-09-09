@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
+  title: Bissy
+  description: A very interesting escape game in Mas Barral.
   difficulty: 1
 
 two:
-  title: MyString
-  description: MyText
-  difficulty: 1
+  title: Cognin
+  description: A quite interesting escape game in la Ferme de Forezan.
+  difficulty: 2

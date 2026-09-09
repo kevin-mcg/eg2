@@ -1,0 +1,17 @@
+<h1>Editing a question for: <%= link_to @escape_game.title, @escape_game %></h1>
+
+<%= form_with(model: [ @escape_game, @question ]) do |form| %>
+  <%= render "shared/error_messages", record: @question %>
+
+  <%= form.label :question %>
+  <br>
+  <%= form.text_area :question %>
+  <br>
+
+  <%= form.label :answer %>
+  <br>
+  <%= form.text_field :answer %>
+  <br>
+
+  <%= form.submit "Update question" %>
+<% end %>
