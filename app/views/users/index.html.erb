@@ -1,0 +1,7 @@
+<h1>All <%= pluralize(@users.size, "User") %></h1>
+
+<% @users.each do |u| %>
+  <ul>
+    <li><%= link_to u.name, u %><br></li>
+  </ul>
+<% end %>

@@ -1,0 +1,26 @@
+<%= form_with(model: user) do |u| %>
+
+  <!-- Can I reuse this????-->
+  <%# render "shared/errors", object: user %>
+
+  <%= u.label :name %>
+  <%= u.text_field :name, autofocus: true %><br>
+
+  <%= u.label :username %>
+  <%= u.text_field :username %><br>
+
+  <%= u.label :email %>
+  <%= u.email_field :email %><br>
+
+  <%= u.label :password %>
+  <%= u.password_field :password %><br>
+
+  <%= u.label :password_confirmation, "Confirm Password" %>
+  <%= u.password_field :password_confirmation %><br>
+
+  <% if user.new_record? %>
+    <%= u.submit "Create Account" %>
+  <% else %>
+    <%= u.submit "Update Account" %>
+  <% end %>
+<% end %>
