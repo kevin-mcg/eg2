@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     post :check_answers, on: :member
     resources :questions
   end
+
+  resources :users
 end
