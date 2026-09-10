@@ -2,12 +2,20 @@
   <h1 class="title"><%= link_to "Escape Games", escape_games_path %></h1>
 
   <ul class="menu">
-    <li class="menu in">
-      <!-- Not implemented yet... -->
-      <%= link_to("Sign in", class: "button") %>
-    </li>
-    <li class="menu up">
-      <%= link_to("Sign Up", signup_path, class: "button") %>
-    </li>
+    <% if current_user %>
+      <li class="menu">
+        <%= link_to current_user.name, current_user %>
+      </li>
+      <li class="menu">
+        <%= button_to "Sign Out", session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li class="menu in">
+        <%= link_to("Sign In", signin_path, class: "button") %>
+      </li>
+      <li class="menu up">
+        <%= link_to("Sign Up", signup_path, class: "button") %>
+      </li>
+    <% end %>
   </ul>
 </header>
