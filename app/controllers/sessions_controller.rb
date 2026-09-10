@@ -15,5 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    reset_session
+    redirect_to escape_games_path, status: :see_other
   end
 end
