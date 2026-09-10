@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_09_09_123018) do
+ActiveRecord::Schema[7.2].define(version: 2026_09_10_174814) do
   create_table "escape_games", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.2].define(version: 2026_09_09_123018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "questions", "escape_games"
