@@ -73,3 +73,13 @@ li.up {background:lightblue;}
   overflow:hidden;
   text-align:center;
 }
+
+table {
+  border-bottom: 1px solid #dddddd;
+  max-width: 600px;
+}
+td {
+  text-wrap: normal;
+  word-wrap: break-word;
+  padding: 7px;
+}
