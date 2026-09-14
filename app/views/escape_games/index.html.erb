@@ -6,6 +6,8 @@
 
 <br><br>
 
-<section class="admin">
-  <%= link_to "Add a New Escape Game", new_escape_game_path, class: "button"%>
-</section>
+<% if current_user_admin? %>
+  <section class="admin">
+    <%= link_to "Add a New Escape Game", new_escape_game_path, class: "button"%>
+  </section>
+<% end %>

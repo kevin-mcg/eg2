@@ -1,4 +1,7 @@
 class EscapeGamesController < ApplicationController
+  before_action :require_signin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show, :check_answers]
+
   def index
     @escape_games = EscapeGame.all
   end
