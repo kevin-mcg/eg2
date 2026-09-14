@@ -30,7 +30,9 @@
           </tr>
         </table>
       <% end %>
-      <%= form.submit "Check your answers" %>
+      <% if !@questions.blank? %>
+        <%= form.submit "Check your answers" %>
+      <% end %>
     <% end %>
   </div>
 
