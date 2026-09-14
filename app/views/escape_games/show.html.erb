@@ -4,10 +4,11 @@
     <p>
       <%= @escape_game.description %>
     </p>
+    <img class="eg_photo" <%= image_tag @escape_game.image_file_name %>
     <table>
       <tr>
         <th>Difficulty:</th>
-        <td><%= @escape_game.difficulty %></td>
+        <td><%= @escape_game.difficulty %>/5</td>
       </tr>
     </table>
   </div>

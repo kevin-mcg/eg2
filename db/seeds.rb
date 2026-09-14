@@ -14,7 +14,8 @@ EscapeGame.create!([
     %{
       A very interesting escape game in Mas Barral.
     }.squish,
-    difficulty: 2
+    difficulty: 2,
+    image_file_name: "placeholder.png"
   },
   {
     title: 'Cognin',
@@ -22,7 +23,8 @@ EscapeGame.create!([
     %{
       A quite interesting escape game in la Ferme de Forezan.
     }.squish,
-    difficulty: 3
+    difficulty: 3,
+    image_file_name: "placeholder.png"
   },
   {
     title: 'La Motte Servolex',
@@ -30,7 +32,8 @@ EscapeGame.create!([
     %{
       A very good escape game in La Motte Servolex.
     }.squish,
-    difficulty: 4
+    difficulty: 4,
+    image_file_name: "placeholder.png"
   }
 ])
 
