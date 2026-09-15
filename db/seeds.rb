@@ -39,13 +39,32 @@ EscapeGame.create!([
 
 Question.create! ([
   {
-    question: "What?",
+    question: "Were you there?",
     answer: "Yes",
     escape_game_id: 1
   },
   {
-    question: "Where?",
+    question: "Were you really there?",
     answer: "No",
     escape_game_id: 2
+  }
+])
+
+User.create! ([
+  {
+    id: 1,
+    name: "Admin",
+    email: "admin@example.com",
+    password: "adminadmin",
+    username: "adminguy",
+    admin: true
+  },
+  {
+    id: 2,
+    name: "User",
+    email: "user@example.com",
+    password: "useruser12",
+    username: "poweruser",
+    admin: false
   }
 ])
